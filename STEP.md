@@ -82,4 +82,4 @@ I wrote the tests in `internal/passwordpolicy/policy_test.go` and the suite pass
 
 My first runs of the four character-class mutations used `if false`, which doesn't compile, so they proved nothing; the table shows the `&& false` reruns. Afterwards `git status` shows only the new test file (plus the `.claude/` folder that was already there), so `policy.go` is back to its original state.
 
-I didn't test digits like `²` or `Ⅷ`: the code accepts any Unicode number where the spec says "digit", and it's unclear which is intended. Two leftovers can be removed: `internal/testdeps` (it only kept testify in `go.mod` while there were no tests) and an unused script, a scratch file
+I didn't test digits like `²` or `Ⅷ`: the code accepts any Unicode number where the spec says "digit", and it's unclear which is intended. Two leftovers can be removed: `internal/testdeps` (it only kept testify in `go.mod` while there were no tests) and an unused scratch script (it is not on this branch).
