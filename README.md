@@ -11,32 +11,36 @@ You need Go 1.24 or newer and Claude Code with the Superpowers plugin.
 ```bash
 git clone https://github.com/ibalashov-srb/tests-you-can-trust-workshop.git
 cd tests-you-can-trust-workshop
+git checkout exercise-3
 go test ./...
 ```
 
 The last command should answer `no tests to run` for `internal/passwordpolicy`.
 
-## Exercise 1: fix a bug test-first
+## Exercise 3: write your own test skill, test-first
 
-Start a new Claude Code session in this folder and paste:
+This branch has no project skill. You will write one.
 
-```text
-Users report that a password of exactly 8 characters is refused.
-Fix it with test-driven development and the project's unit test skill.
-```
-
-## Exercise 2: tests from the spec, then proof of red
-
-In a new session:
+**1. Baseline.** Start a new Claude Code session in this folder and paste:
 
 ```text
-internal/passwordpolicy has few unit tests. Write the rest with the writing-unit-tests skill.
-Finish with three things: the table of behaviours with their rule ids,
-the places where the code breaks the spec, and the table of mutations.
+internal/passwordpolicy has no unit tests. Write them.
 ```
+
+Read what the agent did and write down what is missing. Three things to look at: is the test run green or red at the end, what happened to the tests that show a bug, and did the agent prove that any test can fail?
+
+**2. Write the skill.** Reset the repository (see below). Create `.claude/skills/<your-skill-name>/SKILL.md` against exactly the gaps you saw. It needs a `name` and a `description` that says when to use it, the steps, and a table of mistakes with the fix for each.
+
+**3. Check.** Start a new session and paste the same task with your skill named:
+
+```text
+internal/passwordpolicy has no unit tests. Write them with the <your-skill-name> skill.
+```
+
+Compare the two results. If the agent found a new way to get it wrong, add a row to your table and run it again.
 
 ## Start again
 
 ```bash
-git checkout -- . && git clean -fd
+git checkout -- . && git clean -fd internal
 ```
