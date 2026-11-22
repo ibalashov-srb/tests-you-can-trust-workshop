@@ -5,11 +5,11 @@
 
 ## Where we are
 
-The code is back at the start of the exercise: two bugs, no tests. One file is new: `.claude/skills/finishing-tests/SKILL.md`, about 15 lines. It was written against the four gaps of the baseline, and nothing else.
+The code is back at the start of the exercise: two bugs, no tests. One file is new: `.claude/skills/finishing-tests/SKILL.md`, about 20 lines. It was written against the four gaps of the baseline, and nothing else.
 
 | Gap in the baseline | Line in the skill |
 |---|---|
-| Failing tests left in the suite | Step 1, and the first row of the mistakes table |
+| Failing tests left in the suite, and bugs not marked | Step 1, and the first row of the mistakes table |
 | "The fixes should make it pass", not run | Step 2, and the second row |
 | No link from a test to a rule | Step 3, and the third row |
 

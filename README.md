@@ -2,7 +2,7 @@
 
 A small slice of a Go payment service for the workshop "Teaching Claude Code to Write Tests You Can Trust: Skills, TDD and Proof of Red".
 
-It holds one package (the password-strength rule), its spec, and the project skill an agent uses to write unit tests. The unit tests of the package are deleted, and the code has defects planted for the exercises.
+It holds one package (the password-strength rule) and its spec. The project unit test skill is removed on this branch. The unit tests of the package are deleted, and the code has defects planted for the exercises.
 
 ## Setup
 
