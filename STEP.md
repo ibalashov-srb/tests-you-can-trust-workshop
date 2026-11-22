@@ -1,15 +1,11 @@
-# Step 0: the start
+# Step 1.1: red
 
-**Branch:** `step-0-start` (the same code as `main`)  
-**Next:** `git checkout step-1-red`
+**Branch:** `step-1-red`  
+**Previous:** `step-0-start` · **Next:** `git checkout step-1-green`
 
 ## Where we are
 
-A small slice of a payment service: the password rule in `internal/passwordpolicy/`, its spec in `docs/02-requirements/specs/F-006-user.md` (rule BR-006-16), and one project skill in `.claude/skills/writing-unit-tests/`. The unit tests are deleted and two bugs are planted.
-
-## What to do: exercise 1
-
-Start a new Claude Code session here and paste:
+The agent has written its test and has not touched the code yet. This is the red step of TDD. The test file is exactly what the agent wrote from this prompt:
 
 ```text
 Users report that a password of exactly 8 characters is refused.
@@ -19,22 +15,13 @@ Fix it with test-driven development and the project's unit test skill.
 ## What to show
 
 ```bash
-go test ./...                               # no tests to run
-cat docs/02-requirements/specs/F-006-user.md
-ls .claude/skills/
+go test ./internal/passwordpolicy/        # FAIL: the two 8-byte cases
+cat internal/passwordpolicy/policy_test.go
 ```
 
-To skip the wait (about two minutes), go to the next branch.
+## What to point at
 
-## All steps
-
-| Branch | What it holds |
-|---|---|
-| `step-0-start` | Exercise 1 starts: two bugs, no tests, the unit test skill |
-| `step-1-red` | The failing test the agent wrote, before the fix |
-| `step-1-green` | The one-character fix: exercise 1 done |
-| `step-2-done` | Exercise 2 done: the rest of the tests, a known bug skipped, mutations |
-| `step-3-start` | Exercise 3 starts: the same bugs, no tests, no project skill |
-| `step-3-baseline` | What an agent wrote with no skill |
-| `step-3-skill` | A 15-line skill written against that baseline |
-| `step-3-check` | What a fresh agent wrote with that skill |
+- The expected values come from the spec: "Min 8, max 128" in BR-006-16. The test names the rule.
+- The test checks five length cases, not only the one the user reported: 7 bytes, 8 bytes, 6 characters that take 8 bytes, 128 and 129.
+- Only the two 8-byte cases fail, and they fail with the message the users see.
+- There is a second test, skipped with a bug id. The agent found the other planted bug while reading the spec, and marked it without being asked.
