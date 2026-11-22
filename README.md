@@ -56,6 +56,10 @@ Each exercise takes an agent several minutes. To see a result without waiting, c
 
 The results on these branches are what one agent run produced. Your own run will differ in wording and in numbers.
 
+## Review checklist
+
+[CHECKLIST.md](CHECKLIST.md) has eight questions for reviewing tests that an agent wrote.
+
 ## Start again
 
 ```bash
