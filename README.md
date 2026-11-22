@@ -9,8 +9,8 @@ It holds one package (the password-strength rule), its spec, and the project ski
 You need Go 1.24 or newer and Claude Code with the Superpowers plugin.
 
 ```bash
-git clone <this repository>
-cd <its folder>
+git clone https://github.com/ibalashov-srb/tests-you-can-trust-workshop.git
+cd tests-you-can-trust-workshop
 go test ./...
 ```
 
