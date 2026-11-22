@@ -36,5 +36,5 @@ To skip the wait (about two minutes), go to the next branch.
 | `step-2-done` | Exercise 2 done: the rest of the tests, a known bug skipped, mutations |
 | `step-3-start` | Exercise 3 starts: the same bugs, no tests, no project skill |
 | `step-3-baseline` | What an agent wrote with no skill |
-| `step-3-skill` | A 15-line skill written against that baseline |
+| `step-3-skill` | A short skill written against that baseline |
 | `step-3-check` | What a fresh agent wrote with that skill |
