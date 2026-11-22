@@ -72,7 +72,7 @@ func parseCommonPasswords(file string) map[string]struct{} {
 //     full name. Case-insensitive; a local part or word shorter than
 //     SimilarityMinLength is not checked.
 func Validate(password string, owner *entity.User) error {
-	if len(password) <= MinLength {
+	if len(password) < MinLength {
 		return ErrTooShort
 	}
 	if len(password) > MaxLength {
